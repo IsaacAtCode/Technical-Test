@@ -219,3 +219,5 @@ Used to display the text in the top right corner.
 
 **Rarity** is an enum created to let the items have different materials depending on their rarity. This only applies to Storage & Weapon Item Types.
 
+All 3D assets were downloaded from https://craftpix.net/freebies/
+
