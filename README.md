@@ -28,13 +28,10 @@ There are buttons on the ground that when walked on, spawn an item provided ther
 Within the level there are 3 areas for different types of items.
 
 
-    Storage items which change the inventory size.
 
-
-    Weapons that take up a lot of inventory size.
-
-
-    Standard items that are small.
+* Storage items which change the inventory size.
+* Weapons that take up a lot of inventory size.
+* Standard items that are small.
 
 
 ## Item Representation
@@ -52,7 +49,7 @@ Item information is kept within the **ItemObject **object, it includes informati
 #### Icons
 
 
-### Folder - Content/_Items/_ItemRendering
+	Content/_Items/_ItemRendering
 
 Items are displayed in the inventory using a **3DMeshCapture** which has a SceneCaptureComponent2D to capture the Base_Item’s mesh as a 2D image.
 
@@ -60,7 +57,7 @@ Items are displayed in the inventory using a **3DMeshCapture** which has a Scene
 #### TileSize
 
 
-### Folder - Content/_Inventory/InventorySize
+	Content/_Inventory/InventorySize
 
 The item's tile size is kept as an **Int Point**, however I created a struct called **InventorySize** for easier readability.
 
@@ -68,7 +65,7 @@ The item's tile size is kept as an **Int Point**, however I created a struct cal
 #### Type
 
 
-### Folder - Content/_Inventory/ItemType
+	Content/_Inventory/ItemType
 
 An enum containing the item types, to allow for different functions based on the type.
 
@@ -78,7 +75,7 @@ For example on collision a Storage type will update the inventory size rather th
 #### Class
 
 
-### Folder - Content/_Items/
+	Content/_Items/
 
 Items are displayed within the world as a derivative of the **Base_Item** class which handles collision, material & rotation logic.
 
@@ -86,7 +83,7 @@ Items are displayed within the world as a derivative of the **Base_Item** class 
 ## Item Spawning
 
 
-### Folder - Content/_Items/_Spawning
+	Content/_Items/_Spawning
 
 **ItemSpawner_Component** handles the logic for spawning items, it has 2 functions.
 
@@ -107,7 +104,7 @@ Items are displayed within the world as a derivative of the **Base_Item** class 
 #### Inventory_Component
 
 
-### Folder - Content/_Inventory/Inventory_Component
+	Content/_Inventory/Inventory_Component
 
 The component contains a list of all the **ItemObjects **within it (**Items**), this is stored as a standard array, with 2 functions that can convert between the array index and the 2D tile location. Because the items take up multiple tiles in the inventory they are stored at multiple locations within the array.
 
@@ -140,7 +137,7 @@ When picking up an item, it will **TryAddItem**, which checks if there is enough
 #### Inventory_Widget
 
 
-### Folder - Content/_Inventory/Inventory_Widget
+	Content/_Inventory/Inventory_Widget	
 
 This widget handles most of the display logic for the Inventory_Component. It has 2 children that handle the main parts of the display: 
 
@@ -176,7 +173,7 @@ When dragging, **OnPaint **is called** **to create a box that displays if the po
 #### ItemInventory_Widget
 
 
-### Folder - Content/_Inventory/ItemInventory_Widget
+	Content/_Inventory/ItemInventory_Widget
 
 This widget is just a holder for the item icons.
 
@@ -184,7 +181,7 @@ This widget is just a holder for the item icons.
 #### Item_Widget
 
 
-### Folder - Content/_Inventory/Item_Widget
+	Content/_Inventory/Item_Widget
 
 This widget is created from an ItemObject and will display its icon. It is resizable based on the given TileSize and BorderSize. It is also what is moved during the drag drop operation.
 
@@ -192,7 +189,7 @@ This widget is created from an ItemObject and will display its icon. It is resiz
 #### BackgroundGrid_Widget
 
 
-### Folder - Content/_Inventory/BackgroundGrid_Widget
+	Content/_Inventory/BackgroundGrid_Widget
 
 Creates a grid of **GridTile_Widgets**, with inputs for TileSize & BorderSize.
 
@@ -204,7 +201,7 @@ Also processes the mouse’s position while over the grid for use in item placem
 #### GridTile_Widget
 
 
-### Folder - Content/_Inventory/GridTile_Widget
+	Content/_Inventory/GridTile_Widget
 
 When constructed it will set itself to the TileSize.
 
@@ -212,7 +209,7 @@ When constructed it will set itself to the TileSize.
 #### HUD_Widget
 
 
-### Folder - Content/_Inventory/HUD_Widget
+	Content/_Inventory/HUD_Widget
 
 Used to display the text in the top right corner.
 
